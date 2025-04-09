@@ -1,0 +1,439 @@
+<html lang="pt-BR" class=""><head>
+
+
+<script>
+  window.pixelId = "67f449e68a4dc0d5ab84166a";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telepink</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+.start-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #fc0080;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    z-index: 100;
+}
+
+.start-popup h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.start-popup p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #333;
+    max-width: 90%;
+}
+
+.start-popup button {
+    background-color: #fc0080;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 480px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            width: 150px;
+            margin-top: 10px;
+        }
+        .banner {
+                width: 90%;
+    margin: 10px 0;
+    border-radius: 20px;
+    margin-top: 30px;
+        }
+        .progress-bar {
+            width: 90%;
+            height: 4px;
+            background-color: #ddd;
+            border-radius: 2px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .progress {
+                width: 25%;
+    height: 100%;
+    background-color: #FC0080;
+    border-radius: 2px;	
+        }
+        .question-container, .final-page {
+                  background-color: #FC0080;
+    border-radius: 8px;
+    padding: 30px;
+    display: none;
+    width: 90%;
+        }
+        .question-container.active, .final-page.active {
+            display: block;
+        }
+        .question {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option {
+            background-color: white;
+    color: #FC0080;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+        }
+        .option:hover {
+            background-color: white;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff4c4c;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            z-index: 10;
+        }
+        .final-page {
+            text-align: center;
+            color: white;
+        }
+        .final-page h2 {
+            margin-bottom: 10px;
+        }
+        .final-page p {
+                text-align: left;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 50px;
+        }
+        .btn-redeem {
+            background-color: white;
+    color: #FC0080;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+        }
+        @keyframes gradientAnimation {
+            from {
+                background-color: #E62136;
+            }
+            to {
+                background-color: #670708;
+            }
+        }
+        .loading-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+        }
+        .loading-logo {
+            width: 100px;
+            animation: blink 0.8s infinite alternate;
+        }
+        @keyframes blink {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.5;
+            }
+        }
+        .celebration-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fc0080;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            z-index: 30;
+            animation: slideIn 0.5s ease;
+            text-align: center;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translate(-50%, -100%);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+        .lock-icon {
+            width: 50px;
+            margin: 0 auto 10px auto; /* Centraliza o ícone */
+            animation: unlock 1.5s forwards;
+        }
+        @keyframes unlock {
+            0% {
+                transform: rotate(0);
+            }
+            50% {
+                transform: rotate(20deg);
+            }
+            100% {
+                transform: rotate(0);
+            }
+        }
+    </style>
+
+</head>
+
+
+
+<body cz-shortcut-listen="true" class="">
+    <div class="container">
+
+<div id="start-popup" class="start-popup">
+    <h2>💞 Bem-vinda à Telepink – beleza que transforma vidas!</h2>
+<p>
+Você está prestes a participar de uma campanha especial que une cuidado com você e com o próximo. 💕  
+<br><br>
+A <strong>Telepink</strong> é a união da <strong>Wepink</strong> com o <strong>Teleton</strong> para fazer o bem de forma leve, bonita e significativa.  
+Ao responder este quiz rápido, você entra para uma corrente de solidariedade que ajuda milhares de crianças atendidas pela AACD.  
+<br><br>
+E tem mais: no final da sua participação, você poderá <strong>garantir um kit exclusivo de Body Splash com desconto</strong> e 100% do valor será doado ao Teleton. 🌟  
+<br><br>
+Vamos juntos espalhar beleza, amor e inclusão?
+</p>
+<button onclick="closeStartPopup()">Quero participar</button>
+</div>
+
+
+        <img class="logo" src="images/Frame-616.png" alt="Evino Logo">
+        <img class="banner" src="images/bannerquiz-1.png" alt="Evino Banner">
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="question-container active">
+            <div class="question">Você já teve a experiência de usar nossos body splashes?</div>
+            <div class="options">
+                <div class="option" onclick="handleAnswer(true)">Sim, já uso na minha rotina 🩷</div>
+                <div class="option" onclick="handleAnswer(true)">Sim, mas não uso sempre</div>
+<div class="option" onclick="handleAnswer(true)">Não, nem tinha interesse</div>
+<div class="option" onclick="handleAnswer(true)">Nunca usei, mas sempre tive interesse</div>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">O que mais te inspira a contribuir com uma causa beneficente?</div>
+            <div class="options">
+                <div class="option" onclick="handleAnswer(true)">Saber que estou fazendo a diferença na vida de alguém</div>
+                <div class="option" onclick="handleAnswer(true)">Ver histórias reais de superação</div>
+                <div class="option" onclick="handleAnswer(true)">A união de marcas e pessoas pelo bem comum</div>
+                <div class="option" onclick="handleAnswer(true)">A sensação de fazer parte de algo maior</div>
+
+
+            </div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">Qual palavra melhor representa para você o espírito de ajudar ao próximo?</div>
+            <div class="options">
+                <div class="option" onclick="handleAnswer(true)">Amor</div>
+                <div class="option" onclick="handleAnswer(true)">Solidariedade</div>
+                <div class="option" onclick="handleAnswer(true)">Esperança</div>
+                <div class="option" onclick="handleAnswer(true)">Empatia</div>
+
+            </div>
+        </div>
+
+        <div class="question-container">
+            <div class="question">Ao participar dessa campanha, o que você sente?</div>
+            <div class="options">
+                <div class="option" onclick="handleAnswer(true)">Orgulho de fazer parte</div>
+                <div class="option" onclick="handleAnswer(true)">Gratidão por poder contribuir</div>
+                <div class="option" onclick="handleAnswer(true)">Alegria em ajudar</div>
+               <div class="option" onclick="handleAnswer(true)">Inspiração para continuar apoiando</div>
+            </div>
+        </div>
+
+        <div class="final-page">
+            <h2>Obrigada por participar!</h2>
+            <p>Suas respostas mostram que o bem realmente está em cada escolha que fazemos. 
+Agora, é só clicar no botão abaixo para dar um passo lindo:
+salvar vidas com sua compra e ainda garantir seu kit com desconto especial.
+Juntas, Wepink e Teleton contam com você nessa corrente do bem. #telepink💫</p>
+            <a href="loja.html" id="redirectBtn" class="btn-redeem">Resgatar Desconto</a>
+        </div>
+
+        <div class="loading-screen">
+            <img class="loading-logo" src="images/Frame-616.png" alt="Carregando">
+        </div>
+
+        <div class="celebration-popup">
+            <div class="lock-icon">
+                <!-- Ícone SVG do cadeado desbloqueado -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.584 6C15.8124 4.2341 14.0503 3 12 3C9.23858 3 7 5.23858 7 8V10.0288M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C16.8802 10 17.7202 10 18.362 10.327C18.9265 10.6146 19.3854 11.0735 19.673 11.638C20 12.2798 20 13.1198 20 14.8V16.2C20 17.8802 20 18.7202 19.673 19.362C19.3854 19.9265 18.9265 20.3854 18.362 20.673C17.7202 21 16.8802 21 15.2 21H8.8C7.11984 21 6.27976 21 5.63803 20.673C5.07354 20.3854 4.6146 19.9265 4.32698 19.362C4 18.7202 4 17.8802 4 16.2V14.8C4 13.1198 4 12.2798 4.32698 11.638C4.6146 11.0735 5.07354 10.6146 5.63803 10.327C5.99429 10.1455 6.41168 10.0647 7 10.0288Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div>Oferta Desbloqueada!</div>
+        </div>
+    </div>
+    <div class="popup" style="display: none;">Resposta Errada!</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const redBtn = document.getElementById('redirectBtn')
+            console.log(redBtn)
+            redBtn.setAttribute('href', `${redBtn.getAttribute('href')}${window.location.search}`)
+
+            let currentQuestion = 0;
+            const questions = document.querySelectorAll('.question-container');
+            const finalPage = document.querySelector('.final-page');
+            const loadingScreen = document.querySelector('.loading-screen');
+            const celebrationPopup = document.querySelector('.celebration-popup');
+            questions[currentQuestion].classList.add('active');
+
+            function showNextQuestion() {
+                if (currentQuestion < questions.length - 1) {
+                    questions[currentQuestion].classList.remove('active');
+                    loadingScreen.style.display = 'flex';
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                        currentQuestion++;
+                        questions[currentQuestion].classList.add('active');
+                        updateProgressBar();
+                    }, 800);
+                } else {
+                    questions[currentQuestion].classList.remove('active');
+                    finalPage.classList.add('active');
+                    showCelebrationPopup();
+                }
+            }
+
+
+            window.handleAnswer = function(isCorrect) {
+                if (!isCorrect) {
+                    showPopup('Resposta Errada!');
+                } else {
+                    showNextQuestion();
+                }
+            };
+
+window.closeStartPopup = function() {
+    document.getElementById('start-popup').style.display = 'none';
+    document.body.style.overflow = 'auto';
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('start-popup').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+});
+
+
+            function showPopup(message) {
+                const popup = document.querySelector('.popup');
+                popup.textContent = message;
+                popup.style.display = 'block';
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 1000);
+            }
+
+            function showCelebrationPopup() {
+                celebrationPopup.style.display = 'block';
+                setTimeout(() => {
+                    celebrationPopup.style.display = 'none';
+                }, 1500);
+            }
+
+            function updateProgressBar() {
+                const progress = document.querySelector('.progress');
+                progress.style.width = `${(currentQuestion + 1) / questions.length * 100}%`;
+            }
+        });
+    </script>
+
+
+<div id="kins-kins-popup" style="color-scheme: initial; forced-color-adjust: initial; mask: initial; math-depth: initial; position: initial; position-anchor: initial; text-size-adjust: initial; appearance: initial; color: initial; direction: ltr; font-family: Rubik, sans-serif; font-feature-settings: initial; font-kerning: initial; font-optical-sizing: initial; font-palette: initial; font-size: medium; font-size-adjust: initial; font-stretch: initial; font-style: initial; font-synthesis: initial; font-variant: initial; font-variation-settings: initial; font-weight: initial; position-area: initial; text-orientation: initial; text-rendering: initial; text-spacing-trim: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; anchor-name: initial; anchor-scope: initial; animation-composition: initial; animation: initial; app-region: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: none; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: none; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-decoration-break: initial; box-shadow: initial; box-sizing: border-box; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: block; dominant-baseline: initial; empty-cells: initial; field-sizing: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: auto; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; interpolate-size: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; line-height: normal; list-style: initial; margin-block: initial; margin: 0px; margin-inline: initial; marker: initial; mask-type: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: none; overscroll-behavior-inline: none; overscroll-behavior: none; padding-block: initial; padding: 0px; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; position-try: initial; position-visibility: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-align: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-initial-target: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: left; text-align-last: initial; text-anchor: initial; text-box: initial; text-combine-upright: initial; text-decoration: none; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; text-wrap: wrap; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-class: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; white-space-collapse: collapse; widows: initial; width: auto; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: initial;"><style>
+                    #kins_root {
+                        display: block !important;
+                    }
+                </style><div id="kins_root" style="color-scheme: initial; forced-color-adjust: initial; mask: initial; math-depth: initial; position: initial; position-anchor: initial; text-size-adjust: initial; appearance: initial; color: initial; direction: ltr; font-family: Rubik, sans-serif; font-feature-settings: initial; font-kerning: initial; font-optical-sizing: initial; font-palette: initial; font-size: medium; font-size-adjust: initial; font-stretch: initial; font-style: initial; font-synthesis: initial; font-variant: initial; font-variation-settings: initial; font-weight: initial; position-area: initial; text-orientation: initial; text-rendering: initial; text-spacing-trim: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; anchor-name: initial; anchor-scope: initial; animation-composition: initial; animation: initial; app-region: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: none; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: none; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-decoration-break: initial; box-shadow: initial; box-sizing: border-box; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: block; dominant-baseline: initial; empty-cells: initial; field-sizing: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: auto; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; interpolate-size: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; line-height: normal; list-style: initial; margin-block: initial; margin: 0px; margin-inline: initial; marker: initial; mask-type: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: none; overscroll-behavior-inline: none; overscroll-behavior: none; padding-block: initial; padding: 0px; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; position-try: initial; position-visibility: initial; quotes: initial; r: initial; resize: initial; rotate: initial; ruby-align: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-initial-target: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: left; text-align-last: initial; text-anchor: initial; text-box: initial; text-combine-upright: initial; text-decoration: none; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; text-wrap: wrap; timeline-scope: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-class: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; white-space-collapse: collapse; widows: initial; width: auto; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: initial;"></div></div></body></html>
